@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://bng84cxrkv2l0"]
+
+[ext_resource type="PackedScene" uid="uid://bedwo44djwk67" path="res://Scenes/character.tscn" id="1_tw80r"]
+[ext_resource type="Texture2D" uid="uid://bx5jj31xp2icq" path="res://icon.svg" id="2_lo83c"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uqo3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_12xvn"]
+
+[node name="Game" type="Node2D"]
+
+[node name="Character" parent="." instance=ExtResource("1_tw80r")]
+position = Vector2(-6, -33)
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(4, 413)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_uqo3m")
+
+[node name="block" type="StaticBody2D" parent="." groups=["Rotatable"]]
+position = Vector2(-5, 216)
+scale = Vector2(10, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="block"]
+scale = Vector2(6.3, 6.3)
+shape = SubResource("RectangleShape2D_12xvn")
+
+[node name="Sprite2D" type="Sprite2D" parent="block"]
+texture = ExtResource("2_lo83c")

@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://bedwo44djwk67"]
+
+[ext_resource type="Script" path="res://Scripts/character.gd" id="1_m1cs1"]
+[ext_resource type="Texture2D" uid="uid://bx5jj31xp2icq" path="res://icon.svg" id="2_ue8ut"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k6q3t"]
+
+[node name="Character" type="CharacterBody2D" node_paths=PackedStringArray("projectileHolder") groups=["Rotatable", "Scalable", "Transfortable"]]
+script = ExtResource("1_m1cs1")
+projectileHolder = NodePath("ProjectileHolder")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_ue8ut")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(6, 6)
+shape = SubResource("RectangleShape2D_k6q3t")
+
+[node name="ProjectileHolder" type="Sprite2D" parent="."]
+position = Vector2(0, -100)
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("2_ue8ut")
