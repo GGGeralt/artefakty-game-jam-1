@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://ds161vx3c5rcn"
-path="res://.godot/imported/card-scale.png-2a18556f19fbe4a5f9ad40dbeffca92f.ctex"
+path="res://.godot/imported/card-scale.png-a495007cbb6025277690d30ff39a6830.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Cards/card-scale.png"
-dest_files=["res://.godot/imported/card-scale.png-2a18556f19fbe4a5f9ad40dbeffca92f.ctex"]
+source_file="res://assets/cards/card-scale.png"
+dest_files=["res://.godot/imported/card-scale.png-a495007cbb6025277690d30ff39a6830.ctex"]
 
 [params]
 
