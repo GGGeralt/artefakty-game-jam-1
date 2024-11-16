@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://bedwo44djwk67" path="res://Scenes/character.tscn" id="1_tw80r"]
 [ext_resource type="Texture2D" uid="uid://bx5jj31xp2icq" path="res://icon.svg" id="2_lo83c"]
-[ext_resource type="PackedScene" uid="uid://b65qmf7h655yu" path="res://Scenes/cards-manager.tscn" id="3_c4g5p"]
+[ext_resource type="PackedScene" path="res://Scenes/cards-manager.tscn" id="3_c4g5p"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uqo3m"]
 
