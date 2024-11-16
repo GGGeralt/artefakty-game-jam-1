@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://c27tnkgc18tuy"]
+
+[ext_resource type="Script" path="res://scripts/hud.gd" id="1_vxvso"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wp2xg"]
+font_size = 22
+
+[node name="Hud" type="CanvasLayer"]
+script = ExtResource("1_vxvso")
+
+[node name="CollectedLegsLabel" type="Label" parent="."]
+offset_right = 151.0
+offset_bottom = 35.0
+text = "Zebrane nogi: 0"
+label_settings = SubResource("LabelSettings_wp2xg")
