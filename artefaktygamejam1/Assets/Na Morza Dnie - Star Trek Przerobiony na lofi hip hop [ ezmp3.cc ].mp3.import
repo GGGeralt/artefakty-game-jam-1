@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0pf0dqshkmyt"
+path="res://.godot/imported/Na Morza Dnie - Star Trek Przerobiony na lofi hip hop [ ezmp3.cc ].mp3-1e9f0a834c40c0094ca7f7278bb1bce0.mp3str"
+
+[deps]
+
+source_file="res://assets/Na Morza Dnie - Star Trek Przerobiony na lofi hip hop [ ezmp3.cc ].mp3"
+dest_files=["res://.godot/imported/Na Morza Dnie - Star Trek Przerobiony na lofi hip hop [ ezmp3.cc ].mp3-1e9f0a834c40c0094ca7f7278bb1bce0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
