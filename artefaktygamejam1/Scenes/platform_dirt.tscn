@@ -2,6 +2,9 @@
 
 [ext_resource type="Texture2D" uid="uid://73wjuj88v2os" path="res://assets/sprite_sheets/Terrain.png" id="1_8t8s1"]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01jbr"]
+size = Vector2(64, 64)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_vu45m"]
 atlas = ExtResource("1_8t8s1")
 region = Rect2(0, 0, 64, 64)
@@ -60,14 +63,11 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_01jbr"]
-size = Vector2(64, 64)
-
 [node name="Dirt" type="StaticBody2D" groups=["Rotatable", "Scalable", "Transfortable"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_01jbr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_orflx")
 animation = &"Ground"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_01jbr")

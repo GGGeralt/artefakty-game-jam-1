@@ -60,7 +60,7 @@ func reposition_cards():
 	
 	for i in range(cards.size()):
 		var card = cards[i]
-		card.position = Vector2(start_x + i * CARD_OFFSET_X, bottom_center.y)
+		card.position = Vector2(start_x + i * CARD_OFFSET_X, bottom_center.y -16)
 		card.scale.x = CARD_SCALE_X
 		card.scale.y = CARD_SCALE_Y
 					

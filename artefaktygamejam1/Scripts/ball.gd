@@ -3,10 +3,10 @@ extends CharacterBody2D
 #Efekt zmieniający szybkość piłki
 const SPEED = 300.0
 
-const TRANSFORM_FACTOR = 50.0
+const TRANSFORM_FACTOR = 64.0
 const SCALE_FACTOR = 1.0
 
-const COOLDOWN_TIME = 0.5
+const COOLDOWN_TIME = 0.3
 @onready var timer = Timer.new()
 
 var effect: String = ""
@@ -79,21 +79,40 @@ func cooldown():
 
 func randomize_transform(collider: CollisionObject2D):
 	var random_position = Vector2(
-		randf_range(-1 * TRANSFORM_FACTOR, 1 * TRANSFORM_FACTOR),
-		randf_range(-1 * TRANSFORM_FACTOR, 1 * TRANSFORM_FACTOR),
+		get_random_value() * TRANSFORM_FACTOR,
+		get_random_value() * TRANSFORM_FACTOR
 	)
 
 	collider.global_transform.origin += Vector2(random_position)	
 	
 func randomize_scale(collider: CollisionObject2D):
 	var random_scale = Vector2(
-		randf_range(0.1 * SCALE_FACTOR, 3.0 * SCALE_FACTOR),
-		randf_range(0.1 * SCALE_FACTOR, 3.0 * SCALE_FACTOR),
+		get_random_scale() * SCALE_FACTOR,
+		get_random_scale() * SCALE_FACTOR
 	)
 	
 	collider.scale = Vector2(random_scale)
 	
 func randomize_rotation(collider):
-	var random_angle = randf_range(0, 2 * PI)
-	collider.rotation = random_angle
+	collider.rotation = get_random_angle()
 	
+func get_random_value():
+	return randi() % 5 + 1
+	
+func get_random_scale():
+	# Utwórz tablicę wartości od 0.1 do 2.0 ze skokiem 0.2
+	var values = []
+	for i in range(11): # 11, bo (2.0 - 0.1) / 0.2 + 1
+		values.append(0.1 + i * 0.2)
+	
+	# Wybierz losową wartość z tablicy
+	return values[randi() % values.size()]
+	
+func get_random_angle():
+	# Zakres kątów od 15 do 75
+	var angles = []
+	for angle in range(15, 76, 14): # 76, ponieważ range kończy się na n-1
+		angles.append(angle)
+
+	# Losowy wybór z dostępnych kątów
+	return angles[randi() % angles.size()]

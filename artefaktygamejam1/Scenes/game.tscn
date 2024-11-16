@@ -1,50 +1,720 @@
-[gd_scene load_steps=8 format=3 uid="uid://bng84cxrkv2l0"]
+[gd_scene load_steps=9 format=3 uid="uid://bng84cxrkv2l0"]
 
+[ext_resource type="PackedScene" uid="uid://s2ufg1a2ewep" path="res://scenes/platform_rock.tscn" id="1_ssx7n"]
 [ext_resource type="PackedScene" uid="uid://c2vd5pja4qnu4" path="res://scenes/platform_animated.tscn" id="1_sy781"]
 [ext_resource type="PackedScene" uid="uid://bedwo44djwk67" path="res://scenes/character.tscn" id="1_tw80r"]
 [ext_resource type="PackedScene" uid="uid://6ppbbycpx3le" path="res://scenes/leg.tscn" id="2_p63r4"]
 [ext_resource type="PackedScene" uid="uid://b65qmf7h655yu" path="res://scenes/cards-manager.tscn" id="3_c4g5p"]
+[ext_resource type="PackedScene" uid="uid://bikdvj3yaett0" path="res://scenes/platform_dirt.tscn" id="3_jnx57"]
 [ext_resource type="PackedScene" uid="uid://c27tnkgc18tuy" path="res://scenes/hud.tscn" id="5_btfc3"]
 [ext_resource type="PackedScene" uid="uid://c838u7khdqkpl" path="res://scenes/spawner.tscn" id="6_qcl4m"]
-
-[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uqo3m"]
 
 [node name="Game" type="Node2D"]
 
 [node name="World" type="Node2D" parent="."]
 
-[node name="PlatformAnimated" parent="World" instance=ExtResource("1_sy781")]
-position = Vector2(-359, 54)
-
-[node name="PlatformAnimated2" parent="World" instance=ExtResource("1_sy781")]
-position = Vector2(-290, 53)
-
-[node name="PlatformAnimated3" parent="World" instance=ExtResource("1_sy781")]
-position = Vector2(-225, 53)
-
-[node name="PlatformAnimated4" parent="World" instance=ExtResource("1_sy781")]
-position = Vector2(-158, 52)
-
-[node name="PlatformAnimated5" parent="World" instance=ExtResource("1_sy781")]
-position = Vector2(-93, 51)
-
-[node name="WOrldBoundary" type="StaticBody2D" parent="World"]
-position = Vector2(4, 413)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/WOrldBoundary"]
-shape = SubResource("WorldBoundaryShape2D_uqo3m")
-
-[node name="Legf" parent="World" instance=ExtResource("2_p63r4")]
-position = Vector2(-1359, 69)
+[node name="Leg" parent="World" instance=ExtResource("2_p63r4")]
+position = Vector2(-1024, -648)
 
 [node name="Leg2" parent="World" instance=ExtResource("2_p63r4")]
-position = Vector2(1338, 64)
+position = Vector2(-768, 592)
+
+[node name="Leg3" parent="World" instance=ExtResource("2_p63r4")]
+position = Vector2(624, 528)
+
+[node name="Leg4" parent="World" instance=ExtResource("2_p63r4")]
+position = Vector2(264, -416)
+
+[node name="Ground" type="Node2D" parent="World"]
+position = Vector2(0, 64)
+
+[node name="Rock" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-576, -192)
+
+[node name="Rock38" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-192, 256)
+
+[node name="Rock39" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-256, 320)
+
+[node name="Rock40" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-256, 384)
+
+[node name="Rock81" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-320, 320)
+
+[node name="Rock5" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-640, -128)
+
+[node name="Rock32" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-1152, 472)
+
+[node name="Rock33" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-1152, 536)
+
+[node name="Rock34" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-1024, 536)
+
+[node name="Rock35" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-960, 536)
+
+[node name="Rock36" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-1088, 536)
+
+[node name="Rock37" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-896, 536)
+
+[node name="Rock41" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-1152, 600)
+
+[node name="Rock42" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-1024, 600)
+
+[node name="Rock43" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-960, 600)
+
+[node name="Rock44" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-1088, 600)
+
+[node name="Rock45" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-896, 600)
+
+[node name="Rock46" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-832, 600)
+
+[node name="Rock47" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-768, 600)
+
+[node name="Rock48" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-704, 600)
+
+[node name="Rock49" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-640, 536)
+
+[node name="Rock50" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-512, 536)
+
+[node name="Rock51" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-448, 536)
+
+[node name="Rock52" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-576, 536)
+
+[node name="Rock53" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-384, 536)
+
+[node name="Rock54" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-320, 536)
+
+[node name="Rock55" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-256, 536)
+
+[node name="Rock56" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-200, 536)
+
+[node name="Rock57" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-640, 600)
+
+[node name="Rock58" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-512, 600)
+
+[node name="Rock59" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-448, 600)
+
+[node name="Rock60" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-576, 600)
+
+[node name="Rock61" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-384, 600)
+
+[node name="Rock62" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-320, 600)
+
+[node name="Rock63" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-256, 600)
+
+[node name="Rock64" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-200, 600)
+
+[node name="Rock65" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-1152, 664)
+
+[node name="Rock66" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-1024, 664)
+
+[node name="Rock67" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-960, 664)
+
+[node name="Rock68" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-1088, 664)
+
+[node name="Rock69" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-896, 664)
+
+[node name="Rock70" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-832, 664)
+
+[node name="Rock71" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-768, 664)
+
+[node name="Rock72" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-704, 664)
+
+[node name="Rock73" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-640, 664)
+
+[node name="Rock74" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-512, 664)
+
+[node name="Rock75" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-448, 664)
+
+[node name="Rock76" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-576, 664)
+
+[node name="Rock77" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-384, 664)
+
+[node name="Rock78" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-320, 664)
+
+[node name="Rock79" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-256, 664)
+
+[node name="Rock80" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-200, 664)
+
+[node name="Rock83" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(64, 536)
+
+[node name="Rock84" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(128, 536)
+
+[node name="Rock87" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(64, 600)
+
+[node name="Rock88" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(128, 600)
+
+[node name="Rock89" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(192, 600)
+
+[node name="Rock91" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(64, 664)
+
+[node name="Rock92" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(128, 664)
+
+[node name="Rock93" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(192, 664)
+
+[node name="Rock102" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(256, 664)
+
+[node name="Rock108" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(640, 536)
+
+[node name="Rock109" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(704, 536)
+
+[node name="Rock112" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(640, 600)
+
+[node name="Rock113" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(704, 600)
+
+[node name="Rock114" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(512, 664)
+
+[node name="Rock118" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(320, 664)
+
+[node name="Rock119" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(384, 664)
+
+[node name="Rock120" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(448, 664)
+
+[node name="Rock115" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(576, 664)
+
+[node name="Rock116" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(640, 664)
+
+[node name="Rock117" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(704, 664)
+
+[node name="Rock2" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-704, -256)
+
+[node name="Rock6" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-704, -192)
+
+[node name="Rock7" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-640, -320)
+
+[node name="Rock12" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-576, -576)
+
+[node name="Rock16" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-640, -576)
+
+[node name="Rock17" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-704, -576)
+
+[node name="Rock13" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-512, -576)
+
+[node name="Rock18" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-512, -512)
+
+[node name="Rock19" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-448, -512)
+
+[node name="Rock20" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-448, -448)
+
+[node name="Rock14" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-448, -576)
+
+[node name="Rock15" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-384, -576)
+
+[node name="Rock21" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(64, -576)
+
+[node name="Rock27" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(64, -640)
+
+[node name="Rock28" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(64, -640)
+
+[node name="Rock30" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(0, -640)
+
+[node name="Rock29" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(128, -640)
+
+[node name="Rock31" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(192, -640)
+
+[node name="Rock22" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(128, -576)
+
+[node name="Rock23" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(192, -576)
+
+[node name="Rock24" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(64, -512)
+
+[node name="Rock25" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-64, -576)
+
+[node name="Rock26" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(0, -576)
+
+[node name="Rock82" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(448, -576)
+
+[node name="Rock85" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(448, -640)
+
+[node name="Rock86" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(448, -640)
+
+[node name="Rock90" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(384, -640)
+
+[node name="Rock94" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(512, -640)
+
+[node name="Rock96" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(512, -576)
+
+[node name="Rock97" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(576, -576)
+
+[node name="Rock99" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(256, -320)
+
+[node name="Rock100" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(384, -576)
+
+[node name="Rock127" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(320, -640)
+
+[node name="Rock126" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(256, -640)
+
+[node name="Rock101" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(448, -448)
+
+[node name="Rock128" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(320, -384)
+
+[node name="Rock129" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(384, -448)
+
+[node name="Rock103" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(448, -512)
+
+[node name="Rock104" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(448, -512)
+
+[node name="Rock105" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(128, -384)
+
+[node name="Rock106" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(512, -512)
+
+[node name="Rock107" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(576, -512)
+
+[node name="Rock110" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(512, -448)
+
+[node name="Rock111" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(576, -448)
+
+[node name="Rock121" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(640, -448)
+
+[node name="Rock130" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(384, -384)
+
+[node name="Rock122" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(192, -384)
+
+[node name="Rock125" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(128, -448)
+
+[node name="Rock124" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(128, -512)
+
+[node name="Rock123" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(256, -384)
+
+[node name="Rock8" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-704, -320)
+
+[node name="Rock9" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-768, -320)
+
+[node name="Rock10" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-768, -256)
+
+[node name="Rock11" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-768, -192)
+
+[node name="Rock3" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-640, -192)
+
+[node name="Rock4" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-640, -256)
+
+[node name="PlatformAnimated6" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-320, 0)
+
+[node name="PlatformAnimated7" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-256, 0)
+
+[node name="PlatformAnimated8" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-192, 0)
+
+[node name="PlatformAnimated9" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-128, 0)
+
+[node name="PlatformAnimated10" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-64, 0)
+
+[node name="PlatformAnimated11" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-64, 0)
+
+[node name="PlatformAnimated14" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-448, 0)
+
+[node name="PlatformAnimated16" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-768, 128)
+
+[node name="PlatformAnimated26" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(384, 64)
+
+[node name="PlatformAnimated27" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(320, 64)
+
+[node name="PlatformAnimated28" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(448, 0)
+
+[node name="PlatformAnimated29" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(512, 0)
+
+[node name="PlatformAnimated30" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(576, 0)
+
+[node name="PlatformAnimated31" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(256, 192)
+
+[node name="PlatformAnimated32" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(192, 192)
+
+[node name="PlatformAnimated21" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-704, 192)
+
+[node name="PlatformAnimated23" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-1024, 472)
+
+[node name="PlatformAnimated24" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-1088, 408)
+
+[node name="PlatformAnimated25" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-1152, 344)
+
+[node name="PlatformAnimated22" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-896, 192)
+
+[node name="PlatformAnimated17" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-832, 128)
+
+[node name="PlatformAnimated15" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-384, 0)
+
+[node name="Dirt42" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-448, 64)
+
+[node name="Dirt49" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-448, 64)
+
+[node name="Dirt43" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-384, 64)
+
+[node name="Dirt62" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-384, 128)
+
+[node name="Dirt63" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-320, 192)
+
+[node name="Dirt64" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-320, 192)
+
+[node name="Dirt65" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-320, 256)
+
+[node name="Dirt66" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-384, 192)
+
+[node name="Dirt67" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-256, 256)
+
+[node name="Dirt68" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-256, 192)
+
+[node name="Dirt69" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-256, 128)
+
+[node name="Dirt70" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-320, 128)
+
+[node name="Dirt71" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-192, 128)
+
+[node name="Dirt72" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-192, 192)
+
+[node name="Dirt73" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-128, 128)
+
+[node name="Dirt80" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-128, 128)
+
+[node name="Dirt74" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(576, 536)
+
+[node name="Dirt111" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(704, 472)
+
+[node name="Dirt75" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(256, 536)
+
+[node name="Dirt78" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(512, 600)
+
+[node name="Dirt79" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(576, 600)
+
+[node name="Dirt77" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(192, 536)
+
+[node name="Dirt76" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(256, 600)
+
+[node name="Dirt50" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-832, 192)
+
+[node name="Dirt61" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-1088, 472)
+
+[node name="Dirt60" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-1152, 408)
+
+[node name="Dirt51" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-768, 192)
+
+[node name="Dirt44" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-320, 64)
+
+[node name="PlatformAnimated12" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-960, -640)
+
+[node name="PlatformAnimated13" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-896, -576)
+
+[node name="PlatformAnimated18" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-1088, -640)
+
+[node name="PlatformAnimated20" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-1152, -576)
+
+[node name="PlatformAnimated19" parent="World/Ground" instance=ExtResource("1_sy781")]
+position = Vector2(-1024, -640)
+
+[node name="Dirt52" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-1088, -576)
+
+[node name="Dirt55" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-1152, -512)
+
+[node name="Dirt56" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-1088, -512)
+
+[node name="Dirt57" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-1152, -448)
+
+[node name="Dirt58" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-1088, -448)
+
+[node name="Dirt59" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-1024, -512)
+
+[node name="Dirt53" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-1024, -576)
+
+[node name="Dirt54" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-960, -576)
+
+[node name="Dirt45" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-256, 64)
+
+[node name="Dirt46" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-192, 64)
+
+[node name="Dirt47" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-128, 64)
+
+[node name="Dirt48" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(-64, 64)
+
+[node name="Dirt81" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(320, 192)
+
+[node name="Dirt82" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(320, 192)
+
+[node name="Dirt97" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(320, 256)
+
+[node name="Dirt102" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(448, 192)
+
+[node name="Dirt103" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(448, 256)
+
+[node name="Dirt104" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(448, 320)
+
+[node name="Dirt105" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(512, 320)
+
+[node name="Dirt112" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(512, 384)
+
+[node name="Dirt113" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(704, 256)
+
+[node name="Dirt106" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(512, 256)
+
+[node name="Dirt98" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(256, 256)
+
+[node name="Dirt99" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(256, 320)
+
+[node name="Dirt100" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(192, 320)
+
+[node name="Dirt101" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(192, 256)
+
+[node name="Dirt83" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(384, 192)
+
+[node name="Dirt84" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(320, 128)
+
+[node name="Dirt85" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(384, 128)
+
+[node name="Dirt86" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(448, 128)
+
+[node name="Dirt87" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(512, 128)
+
+[node name="Dirt88" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(576, 128)
+
+[node name="Dirt89" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(448, 64)
+
+[node name="Dirt90" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(448, 64)
+
+[node name="Dirt91" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(512, 64)
+
+[node name="Dirt92" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(576, 64)
+
+[node name="Dirt93" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(640, 64)
+
+[node name="Dirt94" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(704, 64)
+
+[node name="Dirt95" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(640, 128)
+
+[node name="Dirt96" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(704, 128)
+
+[node name="Dirt107" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(512, 192)
+
+[node name="Dirt108" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(576, 192)
+
+[node name="Dirt109" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(640, 192)
+
+[node name="Dirt110" parent="World/Ground" instance=ExtResource("3_jnx57")]
+position = Vector2(704, 192)
 
 [node name="Character" parent="." instance=ExtResource("1_tw80r")]
 position = Vector2(-250, -76)
 collision_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
+zoom = Vector2(2, 2)
 
 [node name="CardsManager" parent="Character/Camera2D" instance=ExtResource("3_c4g5p")]
 position = Vector2(6, 33)
