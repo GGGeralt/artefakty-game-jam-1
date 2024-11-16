@@ -73,7 +73,7 @@ position = Vector2(1338, 64)
 
 [node name="Character" parent="." instance=ExtResource("1_tw80r")]
 position = Vector2(-6, -33)
-collision_layer = 2
+collision_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 
