@@ -55,7 +55,7 @@ script = ExtResource("1_g00w4")
 sprite_frames = SubResource("SpriteFrames_hueur")
 animation = &"fly-right"
 autoplay = "fly-right"
-frame_progress = 0.320871
+frame_progress = 0.292455
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.6, 1.6)
