@@ -52,6 +52,11 @@ func fire_projectile() -> void:
 		add_child(projectile)
 	
 func _process(delta: float) -> void:
+	if global_position.y > 2000:
+		Manager.totalLegsColected = 0
+		get_tree().reload_current_scene()
+	
+	
 	if Input.is_mouse_button_pressed( 1 ):
 		actualDamageBuff = lerpf(actualDamageBuff, minDamageBuff, changeDamageBuff * delta)
 	else:
