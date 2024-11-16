@@ -54,7 +54,10 @@ func _process(delta: float) -> void:
 	
 
 	if not projectile:
+		projectileHolder.visible = true
 		projectileHolder.scale = Vector2(actualDamageBuff/5 + 0.3, actualDamageBuff/5 + 0.3)
+	else:
+		projectileHolder.visible = false
 		
 		
 	if timeSlowed:
