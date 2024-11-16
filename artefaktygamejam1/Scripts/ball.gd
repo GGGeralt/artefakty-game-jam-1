@@ -55,6 +55,9 @@ func _physics_process(delta: float) -> void:
 			elif collider.is_in_group("Player"):
 				print("PLAYER")
 				queue_free()
+			elif collider.is_in_group("Enemy"):
+				print("ENEMY")
+				collider.queue_free()
 
 func cooldown():
 	print("Start")
