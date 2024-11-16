@@ -1,20 +1,53 @@
-[gd_scene load_steps=4 format=3 uid="uid://6ppbbycpx3le"]
+[gd_scene load_steps=8 format=3 uid="uid://6ppbbycpx3le"]
 
 [ext_resource type="Script" path="res://scripts/leg.gd" id="1_74dfo"]
-[ext_resource type="Texture2D" uid="uid://bcw53e5aahyke" path="res://assets/leg.png" id="2_dwmmn"]
+[ext_resource type="Texture2D" uid="uid://bikgy4wsy03ma" path="res://assets/sprite_sheets/Table.png" id="2_6u4su"]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_6y87g"]
-radius = 5.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_01vo2"]
+size = Vector2(10, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fq8al"]
+atlas = ExtResource("2_6u4su")
+region = Rect2(128, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2gru3"]
+atlas = ExtResource("2_6u4su")
+region = Rect2(192, 256, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0j7y1"]
+atlas = ExtResource("2_6u4su")
+region = Rect2(256, 256, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7kd42"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fq8al")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2gru3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0j7y1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="Leg" type="Area2D"]
-scale = Vector2(0.2, 0.2)
+scale = Vector2(1.8, 1.8)
 collision_mask = 2
 script = ExtResource("1_74dfo")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_dwmmn")
-
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("CircleShape2D_6y87g")
+position = Vector2(-2, 0)
+scale = Vector2(2, 1)
+shape = SubResource("RectangleShape2D_01vo2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7kd42")
+autoplay = "default"
+frame_progress = 0.85612
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

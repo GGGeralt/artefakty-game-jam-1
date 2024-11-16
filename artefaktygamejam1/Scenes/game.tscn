@@ -1,5 +1,6 @@
-[gd_scene load_steps=9 format=3 uid="uid://bng84cxrkv2l0"]
+[gd_scene load_steps=10 format=3 uid="uid://bng84cxrkv2l0"]
 
+[ext_resource type="PackedScene" uid="uid://01cg0ylro7d5" path="res://scenes/walking_enemy.tscn" id="1_6or60"]
 [ext_resource type="PackedScene" uid="uid://s2ufg1a2ewep" path="res://scenes/platform_rock.tscn" id="1_ssx7n"]
 [ext_resource type="PackedScene" uid="uid://c2vd5pja4qnu4" path="res://scenes/platform_animated.tscn" id="1_sy781"]
 [ext_resource type="PackedScene" uid="uid://bedwo44djwk67" path="res://scenes/character.tscn" id="1_tw80r"]
@@ -13,17 +14,20 @@
 
 [node name="World" type="Node2D" parent="."]
 
+[node name="WalkingEnemy" parent="World" instance=ExtResource("1_6or60")]
+position = Vector2(-88, 8)
+
 [node name="Leg" parent="World" instance=ExtResource("2_p63r4")]
-position = Vector2(-1024, -648)
+position = Vector2(-1016, -664)
 
 [node name="Leg2" parent="World" instance=ExtResource("2_p63r4")]
-position = Vector2(-768, 592)
+position = Vector2(-760, 576)
 
 [node name="Leg3" parent="World" instance=ExtResource("2_p63r4")]
-position = Vector2(624, 528)
+position = Vector2(624, 512)
 
 [node name="Leg4" parent="World" instance=ExtResource("2_p63r4")]
-position = Vector2(264, -416)
+position = Vector2(264, -408)
 
 [node name="Ground" type="Node2D" parent="World"]
 position = Vector2(0, 64)
