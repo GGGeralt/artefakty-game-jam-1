@@ -2,7 +2,7 @@ extends Node2D
 
 @export var enemy_scene : PackedScene = load("res://scenes/enemy.tscn")
 @export var spawn_distance : float = 1  # Odległość od kamery, gdzie będą się pojawiały wrogowie
-@export var spawn_interval : float = 2  # Czas pomiędzy respawnami
+@export var spawn_interval : float = 3  # Czas pomiędzy respawnami
 
 var camera : Camera2D
 var spawn_timer : Timer

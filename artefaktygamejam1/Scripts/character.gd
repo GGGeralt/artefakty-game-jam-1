@@ -1,10 +1,11 @@
 extends CharacterBody2D
 
 const SPEED = 300.0
-const JUMP_VELOCITY = -1200.0
+const JUMP_VELOCITY = -800.0
 
 @export var projectileHolder:Node2D
 @export var ball = load("res://scenes/ball.tscn")
+var last_velocityx = 0
 var projectile
 
 var timeSlowed:bool=false;
@@ -71,6 +72,26 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	
+	var anim_player : AnimationPlayer = $AnimationPlayer
+	var direction_vector = self.get_last_motion()
+	print(direction_vector)
+	if direction_vector.y != 0:
+		if direction_vector.x <= 0:
+			anim_player.current_animation = "falling_left"
+		elif direction_vector.x > 0:
+			anim_player.current_animation = "falling_right"
+	elif direction_vector.x < 0:
+		anim_player.current_animation = "walking_left"
+		last_velocityx = direction_vector.x
+	elif direction_vector.x > 0:
+		anim_player.current_animation = "walking_right"
+		last_velocityx = direction_vector.x
+	elif direction_vector == Vector2(0,0):
+		if last_velocityx <= 0:
+			anim_player.current_animation = "standing_left"
+		elif last_velocityx > 0:
+			anim_player.current_animation = "standing_right"
+	
 	projectileHolder.global_position = global_position + (global_position.direction_to(get_global_mouse_position())) * 125;
 	#if projectile != null:
 	#	projectile.global_position += projectile.global_position.direction_to(get_global_mouse_position()) *25 * delta
@@ -97,4 +118,5 @@ func damage():
 	cardsManager.disable_next_card()
 	
 	if cardsManager.get_active_cards_count() == 1:
-		print("Game Over")
+		Manager.totalLegsColected = 0
+		get_tree().reload_current_scene()

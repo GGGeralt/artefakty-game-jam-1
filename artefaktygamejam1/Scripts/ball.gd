@@ -46,6 +46,8 @@ func _physics_process(delta: float) -> void:
 			var collision = move_and_collide(velocity * delta, true)
 			
 			if collision:
+				if collision.get_collider().is_in_group("Enemy"):
+					collision.get_collider().queue_free()
 				if collision.get_collider().is_in_group("Player"):
 					queue_free()
 		return

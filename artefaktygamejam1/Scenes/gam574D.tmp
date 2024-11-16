@@ -1,6 +1,6 @@
-[gd_scene load_steps=11 format=3 uid="uid://bng84cxrkv2l0"]
+[gd_scene load_steps=10 format=3 uid="uid://bng84cxrkv2l0"]
 
-[ext_resource type="Texture2D" uid="uid://dwhiw51pg2xnp" path="res://assets/backgroundCastles-2.png" id="1_ck21r"]
+[ext_resource type="PackedScene" uid="uid://01cg0ylro7d5" path="res://scenes/walking_enemy.tscn" id="1_6or60"]
 [ext_resource type="PackedScene" uid="uid://s2ufg1a2ewep" path="res://scenes/platform_rock.tscn" id="1_ssx7n"]
 [ext_resource type="PackedScene" uid="uid://c2vd5pja4qnu4" path="res://scenes/platform_animated.tscn" id="1_sy781"]
 [ext_resource type="PackedScene" uid="uid://bedwo44djwk67" path="res://scenes/character.tscn" id="1_tw80r"]
@@ -9,23 +9,13 @@
 [ext_resource type="PackedScene" uid="uid://bikdvj3yaett0" path="res://scenes/platform_dirt.tscn" id="3_jnx57"]
 [ext_resource type="PackedScene" uid="uid://c27tnkgc18tuy" path="res://scenes/hud.tscn" id="5_btfc3"]
 [ext_resource type="PackedScene" uid="uid://c838u7khdqkpl" path="res://scenes/spawner.tscn" id="6_qcl4m"]
-[ext_resource type="Texture2D" uid="uid://kbqmfnr0mnjd" path="res://assets/backgroundCastles.png" id="10_l4rgh"]
 
 [node name="Game" type="Node2D"]
 
-[node name="Background2" type="Sprite2D" parent="."]
-z_index = -100
-position = Vector2(-912.594, -638.903)
-scale = Vector2(8.60597, 3.83332)
-texture = ExtResource("1_ck21r")
-
-[node name="Background" type="Sprite2D" parent="."]
-z_index = -100
-position = Vector2(-216, -48)
-scale = Vector2(3.23804, 1.57481)
-texture = ExtResource("10_l4rgh")
-
 [node name="World" type="Node2D" parent="."]
+
+[node name="WalkingEnemy" parent="World" instance=ExtResource("1_6or60")]
+position = Vector2(-88, 8)
 
 [node name="Leg" parent="World" instance=ExtResource("2_p63r4")]
 position = Vector2(-1016, -664)
@@ -733,7 +723,8 @@ collision_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 zoom = Vector2(2, 2)
+position_smoothing_enabled = true
 
-[node name="CardsManager" parent="Character/Camera2D" instance=ExtResource("3_c4g5p")]
+[node name="CardsManager" parent="." instance=ExtResource("3_c4g5p")]
 z_index = 100
-position = Vector2(256, 109)
+position = Vector2(6, 33)

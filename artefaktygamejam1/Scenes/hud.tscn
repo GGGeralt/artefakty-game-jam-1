@@ -3,13 +3,15 @@
 [ext_resource type="Script" path="res://scripts/hud.gd" id="1_vxvso"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wp2xg"]
-font_size = 22
+font_size = 62
 
 [node name="Hud" type="CanvasLayer"]
 script = ExtResource("1_vxvso")
 
 [node name="CollectedLegsLabel" type="Label" parent="."]
-offset_right = 151.0
-offset_bottom = 35.0
+offset_left = 24.0
+offset_top = 8.0
+offset_right = 485.0
+offset_bottom = 94.0
 text = "Zebrane nogi: 0"
 label_settings = SubResource("LabelSettings_wp2xg")

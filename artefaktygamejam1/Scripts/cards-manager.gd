@@ -4,7 +4,7 @@ const TransformCard = preload("cards/transform-card.gd")
 const RotateCard = preload("cards/rotate-card.gd")
 const ScaleCard = preload("cards/scale-card.gd")
 
-const CARD_OFFSET_X = 150
+const CARD_OFFSET_X = 140
 const ACTUAL_CARD_OFFSET_Y = 60
 const CARD_SCALE_X = 0.5
 const CARD_SCALE_Y = 1
@@ -12,7 +12,7 @@ const CARD_SCALE_Y = 1
 var cards: Array = [
 	TransformCard.new(),
 	RotateCard.new(),
-	ScaleCard.new(),
+	TransformCard.new(),
 	RotateCard.new(),
 	ScaleCard.new(),
 ]
@@ -20,8 +20,10 @@ var cards: Array = [
 func _ready() -> void:		
 	for i in range(cards.size()):
 		add_child(cards[i])
-		
 	reposition_cards()
+		
+#func _process(delta: float) -> void:
+	#reposition_cards()
 		
 func pop_card():
 	var first_card = cards[0]
@@ -56,11 +58,11 @@ func reposition_cards():
 	var bottom_center = camera.position + Vector2(0, camera_size.y / 2)
 	
 	var total_width = (cards.size() - 1) * CARD_OFFSET_X
-	var start_x = bottom_center.x - total_width / 2
+	var start_x = bottom_center.x - (total_width / 2) - 260
 	
 	for i in range(cards.size()):
 		var card = cards[i]
-		card.position = Vector2(start_x + i * CARD_OFFSET_X, bottom_center.y -16)
+		card.position = Vector2(start_x + i * CARD_OFFSET_X, bottom_center.y - 64)
 		card.scale.x = CARD_SCALE_X
 		card.scale.y = CARD_SCALE_Y
 					
