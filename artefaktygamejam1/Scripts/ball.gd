@@ -11,6 +11,8 @@ const COOLDOWN_TIME = 0.5
 
 var effect: String = ""
 var initialVelocity:Vector2
+var lastVelocity:Vector2
+var isReturning:bool
 
 func _ready() -> void:
 	randomize()
@@ -19,12 +21,20 @@ func _ready() -> void:
 	timer.wait_time = COOLDOWN_TIME
 	timer.one_shot = true
 	
-
+func Return()->void:
+	isReturning = true
+	
 func SetInitialEffect(val:String)->void:
 	effect = val
 	
 func SetInitialVelocity(vel:Vector2)->void:
 	velocity = vel * SPEED
+
+func _process(delta: float) -> void:
+	if isReturning:
+		if get_node("CollisionShape2D").process_mode != Node.PROCESS_MODE_DISABLED:
+			get_node("CollisionShape2D").process_mode = Node.PROCESS_MODE_DISABLED
+		velocity = global_position.direction_to(get_parent().global_position) * SPEED
 
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
@@ -42,6 +52,9 @@ func _physics_process(delta: float) -> void:
 			elif effect == "RotateCard" and collider.is_in_group("Rotatable"):
 				await cooldown()
 				randomize_rotation(collider)
+			elif collider.is_in_group("Player"):
+				print("PLAYER")
+				queue_free()
 
 func cooldown():
 	print("Start")

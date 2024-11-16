@@ -29,7 +29,8 @@ func _input(event):
 				fire_projectile()
 				timeSlowed = false
 				
-		#if event.button_index == MOUSE_BUTTON_RIGHT:
+		if event.button_index == MOUSE_BUTTON_RIGHT:
+			projectile.Return()
 	#elif event is InputEventMouseMotion:
 
 func fire_projectile() -> void:
@@ -49,7 +50,9 @@ func _process(delta: float) -> void:
 		actualDamageBuff = lerpf(actualDamageBuff, minDamageBuff, changeDamageBuff * delta)
 	else:
 		actualDamageBuff = lerpf(actualDamageBuff, maxDamageBuff, changeDamageBuff/25 * delta)
-		
+	
+	
+
 	if not projectile:
 		projectileHolder.scale = Vector2(actualDamageBuff/5 + 0.3, actualDamageBuff/5 + 0.3)
 		

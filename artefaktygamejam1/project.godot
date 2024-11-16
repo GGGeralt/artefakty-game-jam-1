@@ -12,12 +12,8 @@ config_version=5
 
 config/name="ArtefaktyGameJam1"
 run/main_scene="res://scenes/game.tscn"
-config/features=PackedStringArray("4.3", "Forward Plus")
+config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
-
-[autoload]
-
-Ball="*res://scripts/ball.gd"
 
 [dotnet]
 
@@ -29,6 +25,7 @@ Scalable=""
 Transfortable=""
 Rotatable=""
 Ignore=""
+Player=""
 
 [input]
 
