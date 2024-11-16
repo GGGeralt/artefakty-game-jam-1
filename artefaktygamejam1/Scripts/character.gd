@@ -17,7 +17,7 @@ var changeDamageBuff:float = 33
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
-			if event.pressed:
+			if event.pressed and not projectile:
 				timeSlowed = true
 			else:
 				fire_projectile()
@@ -40,7 +40,9 @@ func _process(delta: float) -> void:
 	else:
 		actualDamageBuff = lerpf(actualDamageBuff, maxDamageBuff, changeDamageBuff/25 * delta)
 		
-	projectileHolder.scale = Vector2(actualDamageBuff/5 + 0.3, actualDamageBuff/5 + 0.3)
+	if not projectile:
+		projectileHolder.scale = Vector2(actualDamageBuff/5 + 0.3, actualDamageBuff/5 + 0.3)
+		
 		
 	if timeSlowed:
 		Engine.time_scale = 0.1
