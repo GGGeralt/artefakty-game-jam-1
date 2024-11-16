@@ -43,7 +43,9 @@ func fire_projectile() -> void:
 		projectile.top_level = true
 		
 		var card = cardsManager.pop_card()
-		projectile.SetInitialEffect(card._get_card_name());
+		
+		if card.get_status():
+			projectile.SetInitialEffect(card._get_card_name());
 		
 		projectile.SetInitialVelocity(projectileHolder.global_position.direction_to(get_global_mouse_position()));
 		add_child(projectile)
@@ -53,8 +55,7 @@ func _process(delta: float) -> void:
 		actualDamageBuff = lerpf(actualDamageBuff, minDamageBuff, changeDamageBuff * delta)
 	else:
 		actualDamageBuff = lerpf(actualDamageBuff, maxDamageBuff, changeDamageBuff/25 * delta)
-	
-	
+
 
 	if not projectile:
 		projectileHolder.visible = true
@@ -90,3 +91,10 @@ func _physics_process(delta: float) -> void:
 	
 func round_place(num,places):
 	return (round(num*pow(10,places))/pow(10,places))
+	
+	
+func damage():
+	cardsManager.disable_next_card()
+	
+	if cardsManager.get_active_cards_count() == 1:
+		print("Game Over")

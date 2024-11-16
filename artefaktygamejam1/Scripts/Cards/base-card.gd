@@ -3,6 +3,16 @@ extends Node2D
 
 var card_name = null : set = _set_card_name, get = _get_card_name
 var sprite: Sprite2D = null
+var is_active: bool = true
+
+func enable():
+	is_active = true
+
+func disable():
+	is_active = false
+
+func get_status():
+	return is_active
 
 func _set_card_name(value: String) -> void:
 	card_name = value

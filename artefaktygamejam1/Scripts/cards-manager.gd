@@ -28,6 +28,25 @@ func pop_card():
 	cards.append(first_card)
 	reposition_cards()
 	return first_card
+	
+func disable_next_card():
+	for i in range(cards.size()):
+		var card = cards[i]
+		
+		if card.get_status():
+			card.disable()
+			break
+	
+	reposition_cards()
+	
+func get_active_cards_count():
+	var counter = 0
+	
+	for i in range(cards.size()):
+		if cards[i].get_status():
+			counter += 1
+		
+	return counter
 
 func reposition_cards():
 	var viewport_size = Vector2(get_viewport().size.x, get_viewport().size.y)
@@ -43,4 +62,8 @@ func reposition_cards():
 		card.position = Vector2(start_x + i * CARD_OFFSET_X, bottom_center.y)
 		card.scale.x = CARD_SCALE_X
 		card.scale.y = CARD_SCALE_Y
+		
+		var is_active = card.get_status()
+		if not is_active:
+			card.scale.y = CARD_SCALE_Y * 2
 	

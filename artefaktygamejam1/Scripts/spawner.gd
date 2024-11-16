@@ -21,7 +21,6 @@ func _ready() -> void:
 
 # Funkcja do generowania wroga
 func _spawn_enemy():
-	print("Spawn")
 	# Rozmiar widoku kamery
 	var screen_size = get_viewport().size
 	var spawn_pos = Vector2.ZERO
