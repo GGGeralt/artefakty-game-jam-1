@@ -125,7 +125,7 @@ animations = [{
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_tx5tw"]
 
-[node name="Enemy" type="Area2D" groups=["Enemy"]]
+[node name="Enemy" type="StaticBody2D" groups=["Enemy"]]
 script = ExtResource("1_g00w4")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

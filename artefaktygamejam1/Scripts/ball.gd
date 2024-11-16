@@ -53,7 +53,6 @@ func _physics_process(delta: float) -> void:
 				await cooldown()
 				randomize_rotation(collider)
 			elif collider.is_in_group("Player"):
-				print("PLAYER")
 				queue_free()
 			elif collider.is_in_group("Enemy"):
 				print("ENEMY")
