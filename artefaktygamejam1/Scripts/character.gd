@@ -4,7 +4,7 @@ const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
 @export var projectileHolder:Node2D
-@export var ball = load("res://Scenes/ball.tscn")
+@export var ball = load("res://scenes/ball.tscn")
 var projectile
 
 var timeSlowed:bool=false;
@@ -39,7 +39,7 @@ func fire_projectile() -> void:
 		projectile.top_level = true
 		
 		var card = cardsManager.pop_card()
-		projectile.SetInitialEffect(card._get_card_name());\
+		projectile.SetInitialEffect(card._get_card_name());
 		
 		projectile.SetInitialVelocity(projectileHolder.global_position.direction_to(get_global_mouse_position()));
 		add_child(projectile)

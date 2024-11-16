@@ -1,8 +1,8 @@
 extends Node
 
-const TransformCard = preload("Cards/transform-card.gd")
-const RotateCard = preload("Cards/rotate-card.gd")
-const ScaleCard = preload("Cards/scale-card.gd")
+const TransformCard = preload("cards/transform-card.gd")
+const RotateCard = preload("cards/rotate-card.gd")
+const ScaleCard = preload("cards/scale-card.gd")
 
 const CARD_OFFSET_X = 150
 const CARD_SCALE_X = 0.5
