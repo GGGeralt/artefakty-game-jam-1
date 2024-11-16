@@ -31,6 +31,7 @@ func fire_projectile() -> void:
 		projectile = ball.instantiate()
 		projectile.global_position = projectileHolder.global_position
 		projectile.top_level = true
+		projectile.SetInitialVelocity(projectileHolder.global_position.direction_to(get_global_mouse_position()));
 		add_child(projectile)
 	
 func _process(delta: float) -> void:
@@ -48,9 +49,9 @@ func _process(delta: float) -> void:
 
 func _physics_process(delta: float) -> void:
 	
-	projectileHolder.global_position = global_position + (global_position.direction_to(get_global_mouse_position())) * 100;
-	if projectile != null:
-		projectile.global_position += projectile.global_position.direction_to(get_global_mouse_position()) *25 * delta
+	projectileHolder.global_position = global_position + (global_position.direction_to(get_global_mouse_position())) * 125;
+	#if projectile != null:
+	#	projectile.global_position += projectile.global_position.direction_to(get_global_mouse_position()) *25 * delta
 	
 	if not is_on_floor():
 		velocity += get_gravity() * delta

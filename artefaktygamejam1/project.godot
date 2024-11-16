@@ -15,6 +15,10 @@ run/main_scene="res://Scenes/game.tscn"
 config/features=PackedStringArray("4.3", "C#", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+Ball="*res://scripts/ball.gd"
+
 [dotnet]
 
 project/assembly_name="ArtefaktyGameJam1"
@@ -24,6 +28,7 @@ project/assembly_name="ArtefaktyGameJam1"
 Scalable=""
 Transfortable=""
 Rotatable=""
+Ignore=""
 
 [input]
 

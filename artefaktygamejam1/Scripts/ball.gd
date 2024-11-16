@@ -9,7 +9,8 @@ const SCALE_FACTOR = 1.0
 const COOLDOWN_TIME = 0.5
 @onready var timer = Timer.new()
 
-var effect: String
+var effect: String = "rotate"
+var initialVelocity:Vector2
 
 func _ready() -> void:
 	randomize()
@@ -18,22 +19,26 @@ func _ready() -> void:
 	timer.wait_time = COOLDOWN_TIME
 	timer.one_shot = true
 	
+	
+func SetInitialVelocity(vel:Vector2)->void:
+	velocity = vel * SPEED
+
 func _physics_process(delta: float) -> void:
 	var collision = move_and_collide(velocity * delta)
 	if collision:
-		velocity = velocity.bounce(collision.get_normal())
 		var collider = collision.get_collider()
-		
-		#Zmiana położenia		
-		if effect == "transform" and collider.is_in_group("Transfortable"):
-			await cooldown()
-			randomize_transform(collider)
-		elif effect == "scale" and collider.is_in_group("Scalable"):
-			await cooldown()
-			randomize_scale(collider)
-		elif effect == "rotate" and collider.is_in_group("Rotatable"):
-			await cooldown()
-			randomize_rotation(collider)
+		if not collider.is_in_group("Ignore"):
+			velocity = velocity.bounce(collision.get_normal())
+			#Zmiana położenia		
+			if effect == "transform" and collider.is_in_group("Transfortable"):
+				await cooldown()
+				randomize_transform(collider)
+			elif effect == "scale" and collider.is_in_group("Scalable"):
+				await cooldown()
+				randomize_scale(collider)
+			elif effect == "rotate" and collider.is_in_group("Rotatable"):
+				await cooldown()
+				randomize_rotation(collider)
 
 func cooldown():
 	print("Start")

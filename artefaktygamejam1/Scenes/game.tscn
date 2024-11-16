@@ -14,19 +14,54 @@ position = Vector2(-6, -33)
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
 
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
+[node name="World" type="Node2D" parent="."]
+
+[node name="WOrldBoundary" type="StaticBody2D" parent="World"]
 position = Vector2(4, 413)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/WOrldBoundary"]
 shape = SubResource("WorldBoundaryShape2D_uqo3m")
 
-[node name="block" type="StaticBody2D" parent="." groups=["Rotatable"]]
+[node name="block" type="StaticBody2D" parent="World" groups=["Rotatable"]]
 position = Vector2(-5, 216)
 scale = Vector2(10, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="block"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/block"]
 scale = Vector2(6.3, 6.3)
 shape = SubResource("RectangleShape2D_12xvn")
 
-[node name="Sprite2D" type="Sprite2D" parent="block"]
+[node name="Sprite2D" type="Sprite2D" parent="World/block"]
+texture = ExtResource("2_lo83c")
+
+[node name="block4" type="StaticBody2D" parent="World" groups=["Rotatable"]]
+position = Vector2(-21, -397)
+scale = Vector2(10, 1)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/block4"]
+scale = Vector2(6.3, 6.3)
+shape = SubResource("RectangleShape2D_12xvn")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/block4"]
+texture = ExtResource("2_lo83c")
+
+[node name="block2" type="StaticBody2D" parent="World" groups=["Rotatable"]]
+position = Vector2(-636, -96)
+scale = Vector2(1, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/block2"]
+scale = Vector2(6.3, 6.3)
+shape = SubResource("RectangleShape2D_12xvn")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/block2"]
+texture = ExtResource("2_lo83c")
+
+[node name="block3" type="StaticBody2D" parent="World" groups=["Rotatable"]]
+position = Vector2(583, -60)
+scale = Vector2(1, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="World/block3"]
+scale = Vector2(6.3, 6.3)
+shape = SubResource("RectangleShape2D_12xvn")
+
+[node name="Sprite2D" type="Sprite2D" parent="World/block3"]
 texture = ExtResource("2_lo83c")
