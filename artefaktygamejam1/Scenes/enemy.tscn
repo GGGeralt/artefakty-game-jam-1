@@ -1,45 +1,45 @@
 [gd_scene load_steps=10 format=3 uid="uid://ynpb00mlon5i"]
 
 [ext_resource type="Script" path="res://scripts/enemy.gd" id="1_g00w4"]
-[ext_resource type="Texture2D" uid="uid://c5jiktu6el34e" path="res://assets/sprite_sheets/Ghosts.png" id="2_eiv4y"]
+[ext_resource type="Texture2D" uid="uid://bvqkixghf7ly1" path="res://assets/sprite_sheets/Ghosts_2.png" id="2_2jren"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u0gy7"]
-atlas = ExtResource("2_eiv4y")
+[sub_resource type="AtlasTexture" id="AtlasTexture_71qp6"]
+atlas = ExtResource("2_2jren")
 region = Rect2(0, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_r68qf"]
-atlas = ExtResource("2_eiv4y")
+[sub_resource type="AtlasTexture" id="AtlasTexture_25o1r"]
+atlas = ExtResource("2_2jren")
 region = Rect2(32, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_outkg"]
-atlas = ExtResource("2_eiv4y")
+[sub_resource type="AtlasTexture" id="AtlasTexture_48cgf"]
+atlas = ExtResource("2_2jren")
 region = Rect2(64, 0, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_eldcm"]
-atlas = ExtResource("2_eiv4y")
+[sub_resource type="AtlasTexture" id="AtlasTexture_oe6bo"]
+atlas = ExtResource("2_2jren")
 region = Rect2(0, 32, 32, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_8lgof"]
-atlas = ExtResource("2_eiv4y")
+[sub_resource type="AtlasTexture" id="AtlasTexture_sbare"]
+atlas = ExtResource("2_2jren")
 region = Rect2(32, 32, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_hueur"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u0gy7")
+"texture": SubResource("AtlasTexture_71qp6")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_r68qf")
+"texture": SubResource("AtlasTexture_25o1r")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_outkg")
+"texture": SubResource("AtlasTexture_48cgf")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_eldcm")
+"texture": SubResource("AtlasTexture_oe6bo")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_8lgof")
+"texture": SubResource("AtlasTexture_sbare")
 }],
 "loop": true,
 "name": &"fly-right",
@@ -55,6 +55,7 @@ script = ExtResource("1_g00w4")
 sprite_frames = SubResource("SpriteFrames_hueur")
 animation = &"fly-right"
 autoplay = "fly-right"
+frame_progress = 0.320871
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 scale = Vector2(1.6, 1.6)

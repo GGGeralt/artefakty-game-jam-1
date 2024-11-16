@@ -15,7 +15,7 @@
 
 [node name="Background2" type="Sprite2D" parent="."]
 z_index = -100
-position = Vector2(-912.594, -638.903)
+position = Vector2(-976, -896)
 scale = Vector2(8.60597, 3.83332)
 texture = ExtResource("1_ck21r")
 
@@ -53,6 +53,9 @@ position = Vector2(-256, 320)
 
 [node name="Rock40" parent="World/Ground" instance=ExtResource("1_ssx7n")]
 position = Vector2(-256, 384)
+
+[node name="Rock95" parent="World/Ground" instance=ExtResource("1_ssx7n")]
+position = Vector2(-192, 472)
 
 [node name="Rock81" parent="World/Ground" instance=ExtResource("1_ssx7n")]
 position = Vector2(-320, 320)
@@ -124,7 +127,7 @@ position = Vector2(-320, 536)
 position = Vector2(-256, 536)
 
 [node name="Rock56" parent="World/Ground" instance=ExtResource("1_ssx7n")]
-position = Vector2(-200, 536)
+position = Vector2(-191, 536)
 
 [node name="Rock57" parent="World/Ground" instance=ExtResource("1_ssx7n")]
 position = Vector2(-640, 600)
@@ -148,7 +151,7 @@ position = Vector2(-320, 600)
 position = Vector2(-256, 600)
 
 [node name="Rock64" parent="World/Ground" instance=ExtResource("1_ssx7n")]
-position = Vector2(-200, 600)
+position = Vector2(-191, 600)
 
 [node name="Rock65" parent="World/Ground" instance=ExtResource("1_ssx7n")]
 position = Vector2(-1152, 664)
@@ -196,7 +199,7 @@ position = Vector2(-320, 664)
 position = Vector2(-256, 664)
 
 [node name="Rock80" parent="World/Ground" instance=ExtResource("1_ssx7n")]
-position = Vector2(-200, 664)
+position = Vector2(-191, 664)
 
 [node name="Rock83" parent="World/Ground" instance=ExtResource("1_ssx7n")]
 position = Vector2(64, 536)
