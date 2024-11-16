@@ -30,7 +30,10 @@ func _input(event):
 				timeSlowed = false
 				
 		if event.button_index == MOUSE_BUTTON_RIGHT:
-			projectile.Return()
+			if is_instance_valid(projectile):
+				projectile.Return()
+			else:
+				print("Projectile instance is no longer valid!")
 	#elif event is InputEventMouseMotion:
 
 func fire_projectile() -> void:

@@ -17,7 +17,7 @@ texture = ExtResource("2_ue8ut")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["Player"]]
 position = Vector2(0.500001, 0)
-scale = Vector2(5, 5)
+scale = Vector2(6.4, 6.4)
 shape = SubResource("RectangleShape2D_k6q3t")
 
 [node name="ProjectileHolder" type="Sprite2D" parent="." groups=["Ignore"]]
