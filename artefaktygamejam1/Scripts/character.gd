@@ -74,7 +74,7 @@ func _physics_process(delta: float) -> void:
 	
 	var anim_player : AnimationPlayer = $AnimationPlayer
 	var direction_vector = self.get_last_motion()
-	print(direction_vector)
+	
 	if direction_vector.y != 0:
 		if direction_vector.x <= 0:
 			anim_player.current_animation = "falling_left"
