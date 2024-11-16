@@ -14,6 +14,9 @@ var initialVelocity:Vector2
 var lastVelocity:Vector2
 var isReturning:bool
 
+var hits_counter:int = 0
+var max_hits:int = 4
+
 func _ready() -> void:
 	randomize()
 	
@@ -37,6 +40,16 @@ func _process(delta: float) -> void:
 		velocity = global_position.direction_to(get_parent().global_position) * SPEED
 
 func _physics_process(delta: float) -> void:
+	if hits_counter >= max_hits:
+		if isReturning:
+			self.global_position += velocity * delta
+			var collision = move_and_collide(velocity * delta, true)
+			
+			if collision:
+				if collision.get_collider().is_in_group("Player"):
+					queue_free()
+		return
+	
 	var collision = move_and_collide(velocity * delta)
 	if collision:
 		var collider = collision.get_collider()
@@ -44,25 +57,25 @@ func _physics_process(delta: float) -> void:
 			velocity = velocity.bounce(collision.get_normal())
 			#Zmiana położenia		
 			if effect == "TransformCard" and collider.is_in_group("Transfortable"):
+				hits_counter += 1
 				await cooldown()
 				randomize_transform(collider)
 			elif effect == "ScaleCard" and collider.is_in_group("Scalable"):
+				hits_counter += 1
 				await cooldown()
 				randomize_scale(collider)
 			elif effect == "RotateCard" and collider.is_in_group("Rotatable"):
+				hits_counter += 1
 				await cooldown()
 				randomize_rotation(collider)
 			elif collider.is_in_group("Player"):
 				queue_free()
 			elif collider.is_in_group("Enemy"):
-				print("ENEMY")
 				collider.queue_free()
 
 func cooldown():
-	print("Start")
 	timer.start()
 	await timer.timeout
-	print("End")
 
 func randomize_transform(collider: CollisionObject2D):
 	var random_position = Vector2(
@@ -75,7 +88,7 @@ func randomize_transform(collider: CollisionObject2D):
 func randomize_scale(collider: CollisionObject2D):
 	var random_scale = Vector2(
 		randf_range(0.1 * SCALE_FACTOR, 3.0 * SCALE_FACTOR),
-		randf_range(0.1 * SCALE_FACTOR, 3.0* SCALE_FACTOR),
+		randf_range(0.1 * SCALE_FACTOR, 3.0 * SCALE_FACTOR),
 	)
 	
 	collider.scale = Vector2(random_scale)
