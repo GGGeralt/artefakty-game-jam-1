@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxd3aplm737ea"]
+
+[ext_resource type="PackedScene" uid="uid://ynpb00mlon5i" path="res://scenes/enemy.tscn" id="1_xxpxi"]
+[ext_resource type="Script" path="res://scripts/walking_enemy.gd" id="2_pdhuu"]
+
+[node name="WalkingEnemy" instance=ExtResource("1_xxpxi")]
+script = ExtResource("2_pdhuu")
+
+[node name="RayCast2DRight" type="RayCast2D" parent="." index="2"]
+target_position = Vector2(15, 0)
+
+[node name="RayCast2DLeft" type="RayCast2D" parent="." index="3"]
+target_position = Vector2(-16, 0)
