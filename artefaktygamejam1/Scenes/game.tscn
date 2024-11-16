@@ -18,7 +18,7 @@ position = Vector2(4, 413)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/WOrldBoundary"]
 shape = SubResource("WorldBoundaryShape2D_uqo3m")
 
-[node name="block" type="StaticBody2D" parent="World" groups=["Rotatable"]]
+[node name="block" type="StaticBody2D" parent="World" groups=["Rotatable", "Scalable", "Transfortable"]]
 position = Vector2(-5, 216)
 scale = Vector2(10, 1)
 
@@ -29,7 +29,7 @@ shape = SubResource("RectangleShape2D_12xvn")
 [node name="Sprite2D" type="Sprite2D" parent="World/block"]
 texture = ExtResource("2_lo83c")
 
-[node name="block4" type="StaticBody2D" parent="World" groups=["Rotatable"]]
+[node name="block4" type="StaticBody2D" parent="World" groups=["Rotatable", "Scalable", "Transfortable"]]
 position = Vector2(-21, -397)
 scale = Vector2(10, 1)
 
@@ -40,7 +40,7 @@ shape = SubResource("RectangleShape2D_12xvn")
 [node name="Sprite2D" type="Sprite2D" parent="World/block4"]
 texture = ExtResource("2_lo83c")
 
-[node name="block2" type="StaticBody2D" parent="World" groups=["Rotatable"]]
+[node name="block2" type="StaticBody2D" parent="World" groups=["Rotatable", "Scalable", "Transfortable"]]
 position = Vector2(-636, -96)
 scale = Vector2(1, 5)
 
@@ -51,7 +51,7 @@ shape = SubResource("RectangleShape2D_12xvn")
 [node name="Sprite2D" type="Sprite2D" parent="World/block2"]
 texture = ExtResource("2_lo83c")
 
-[node name="block3" type="StaticBody2D" parent="World" groups=["Rotatable"]]
+[node name="block3" type="StaticBody2D" parent="World" groups=["Rotatable", "Scalable", "Transfortable"]]
 position = Vector2(583, -60)
 scale = Vector2(1, 5)
 

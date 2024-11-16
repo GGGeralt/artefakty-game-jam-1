@@ -14,6 +14,12 @@ var maxDamageBuff:float = 1
 var actualDamageBuff:float = 1
 var changeDamageBuff:float = 33
 
+@onready var cardsManager: Node2D = $Camera2D/CardsManager
+
+func _ready() -> void:
+	if cardsManager == null:
+		print("Nie znaleziono CardsManager")
+
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.button_index == MOUSE_BUTTON_LEFT:
@@ -31,6 +37,10 @@ func fire_projectile() -> void:
 		projectile = ball.instantiate()
 		projectile.global_position = projectileHolder.global_position
 		projectile.top_level = true
+		
+		var card = cardsManager.pop_card()
+		projectile.SetInitialEffect(card._get_card_name());\
+		
 		projectile.SetInitialVelocity(projectileHolder.global_position.direction_to(get_global_mouse_position()));
 		add_child(projectile)
 	

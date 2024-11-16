@@ -3,13 +3,13 @@ extends CharacterBody2D
 #Efekt zmieniający szybkość piłki
 const SPEED = 300.0
 
-const TRANSFORM_FACTOR = 50.0
+const TRANSFORM_FACTOR = 200.0
 const SCALE_FACTOR = 1.0
 
 const COOLDOWN_TIME = 0.5
 @onready var timer = Timer.new()
 
-var effect: String = "rotate"
+var effect: String = ""
 var initialVelocity:Vector2
 
 func _ready() -> void:
@@ -19,6 +19,10 @@ func _ready() -> void:
 	timer.wait_time = COOLDOWN_TIME
 	timer.one_shot = true
 	
+	print(effect)
+	
+func SetInitialEffect(val:String)->void:
+	effect = val
 	
 func SetInitialVelocity(vel:Vector2)->void:
 	velocity = vel * SPEED
@@ -30,13 +34,16 @@ func _physics_process(delta: float) -> void:
 		if not collider.is_in_group("Ignore"):
 			velocity = velocity.bounce(collision.get_normal())
 			#Zmiana położenia		
-			if effect == "transform" and collider.is_in_group("Transfortable"):
+			if effect == "TransformCard" and collider.is_in_group("Transfortable"):
+				print("Tranform")
 				await cooldown()
 				randomize_transform(collider)
-			elif effect == "scale" and collider.is_in_group("Scalable"):
+			elif effect == "ScaleCard" and collider.is_in_group("Scalable"):
+				print("Scale")
 				await cooldown()
 				randomize_scale(collider)
-			elif effect == "rotate" and collider.is_in_group("Rotatable"):
+			elif effect == "RotateCard" and collider.is_in_group("Rotatable"):
+				print("Rotate")
 				await cooldown()
 				randomize_rotation(collider)
 

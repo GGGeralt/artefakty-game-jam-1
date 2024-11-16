@@ -27,6 +27,7 @@ func pop_card():
 	cards.remove_at(0)
 	cards.append(first_card)
 	reposition_cards()
+	return first_card
 
 func reposition_cards():
 	var viewport_size = Vector2(get_viewport().size.x, get_viewport().size.y)
