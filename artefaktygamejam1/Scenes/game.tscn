@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bng84cxrkv2l0"]
+[gd_scene load_steps=12 format=3 uid="uid://bng84cxrkv2l0"]
 
 [ext_resource type="Texture2D" uid="uid://dwhiw51pg2xnp" path="res://assets/backgroundCastles-2.png" id="1_ck21r"]
 [ext_resource type="PackedScene" uid="uid://s2ufg1a2ewep" path="res://scenes/platform_rock.tscn" id="1_ssx7n"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://c27tnkgc18tuy" path="res://scenes/hud.tscn" id="5_btfc3"]
 [ext_resource type="PackedScene" uid="uid://c838u7khdqkpl" path="res://scenes/spawner.tscn" id="6_qcl4m"]
 [ext_resource type="Texture2D" uid="uid://kbqmfnr0mnjd" path="res://assets/backgroundCastles.png" id="10_l4rgh"]
+[ext_resource type="PackedScene" uid="uid://cdg2kqa87h42p" path="res://scenes/TABLE.tscn" id="11_6xyb8"]
 
 [node name="Game" type="Node2D"]
 
@@ -725,6 +726,9 @@ position = Vector2(640, 192)
 
 [node name="Dirt110" parent="World/Ground" instance=ExtResource("3_jnx57")]
 position = Vector2(704, 192)
+
+[node name="Table" parent="World/Ground" instance=ExtResource("11_6xyb8")]
+position = Vector2(-304, -152)
 
 [node name="Hud" parent="." instance=ExtResource("5_btfc3")]
 
