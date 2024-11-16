@@ -10,14 +10,6 @@
 
 [node name="Game" type="Node2D"]
 
-[node name="Character" parent="." instance=ExtResource("1_tw80r")]
-position = Vector2(-6, -33)
-
-[node name="Camera2D" type="Camera2D" parent="Character"]
-
-[node name="CardsManager" parent="Character/Camera2D" instance=ExtResource("3_c4g5p")]
-position = Vector2(6, 33)
-
 [node name="World" type="Node2D" parent="."]
 
 [node name="WOrldBoundary" type="StaticBody2D" parent="World"]
@@ -69,3 +61,11 @@ shape = SubResource("RectangleShape2D_12xvn")
 
 [node name="Sprite2D" type="Sprite2D" parent="World/block3"]
 texture = ExtResource("2_lo83c")
+
+[node name="Character" parent="." instance=ExtResource("1_tw80r")]
+position = Vector2(-6, -33)
+
+[node name="Camera2D" type="Camera2D" parent="Character"]
+
+[node name="CardsManager" parent="Character/Camera2D" instance=ExtResource("3_c4g5p")]
+position = Vector2(6, 33)
