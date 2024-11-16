@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://o8t5oftybp1d"
-path="res://.godot/imported/card-transform.png-7f36218f5880936d0d3371bcf4b10edf.ctex"
+uid="uid://73wjuj88v2os"
+path="res://.godot/imported/Terrain.png-d536d59b1c1151df71505ba3fe9a558a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/cards/card-transform.png"
-dest_files=["res://.godot/imported/card-transform.png-7f36218f5880936d0d3371bcf4b10edf.ctex"]
+source_file="res://assets/sprite_sheets/Terrain.png"
+dest_files=["res://.godot/imported/Terrain.png-d536d59b1c1151df71505ba3fe9a558a.ctex"]
 
 [params]
 

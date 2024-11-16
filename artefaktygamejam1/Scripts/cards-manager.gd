@@ -5,6 +5,7 @@ const RotateCard = preload("cards/rotate-card.gd")
 const ScaleCard = preload("cards/scale-card.gd")
 
 const CARD_OFFSET_X = 150
+const ACTUAL_CARD_OFFSET_Y = 60
 const CARD_SCALE_X = 0.5
 const CARD_SCALE_Y = 1
 
@@ -62,8 +63,9 @@ func reposition_cards():
 		card.position = Vector2(start_x + i * CARD_OFFSET_X, bottom_center.y)
 		card.scale.x = CARD_SCALE_X
 		card.scale.y = CARD_SCALE_Y
-		
+					
 		var is_active = card.get_status()
 		if not is_active:
-			card.scale.y = CARD_SCALE_Y * 2
+			card.sprite.texture = card.blocked_texture
 	
+	cards[0].position.y -= ACTUAL_CARD_OFFSET_Y

@@ -21,9 +21,12 @@ func _get_card_name() -> String:
 	return card_name
 
 func set_sprite_texture(texture: Texture2D) -> void:
+	print(texture)
 	if sprite:
 		sprite.texture = texture
+		sprite.scale.x = 1.5
 	else:
 		sprite = Sprite2D.new()
 		sprite.texture = texture
+		sprite.scale.x = 1.5
 		add_child(sprite)

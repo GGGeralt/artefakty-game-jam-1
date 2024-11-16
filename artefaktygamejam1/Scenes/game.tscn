@@ -1,19 +1,32 @@
-[gd_scene load_steps=9 format=3 uid="uid://bng84cxrkv2l0"]
+[gd_scene load_steps=8 format=3 uid="uid://bng84cxrkv2l0"]
 
+[ext_resource type="PackedScene" uid="uid://c2vd5pja4qnu4" path="res://scenes/platform_animated.tscn" id="1_sy781"]
 [ext_resource type="PackedScene" uid="uid://bedwo44djwk67" path="res://scenes/character.tscn" id="1_tw80r"]
-[ext_resource type="Texture2D" uid="uid://bx5jj31xp2icq" path="res://icon.svg" id="2_lo83c"]
 [ext_resource type="PackedScene" uid="uid://6ppbbycpx3le" path="res://scenes/leg.tscn" id="2_p63r4"]
 [ext_resource type="PackedScene" uid="uid://b65qmf7h655yu" path="res://scenes/cards-manager.tscn" id="3_c4g5p"]
-[ext_resource type="PackedScene" uid="uid://c838u7khdqkpl" path="res://scenes/spawner.tscn" id="4_cf5y8"]
 [ext_resource type="PackedScene" uid="uid://c27tnkgc18tuy" path="res://scenes/hud.tscn" id="5_btfc3"]
+[ext_resource type="PackedScene" uid="uid://c838u7khdqkpl" path="res://scenes/spawner.tscn" id="6_qcl4m"]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uqo3m"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_12xvn"]
 
 [node name="Game" type="Node2D"]
 
 [node name="World" type="Node2D" parent="."]
+
+[node name="PlatformAnimated" parent="World" instance=ExtResource("1_sy781")]
+position = Vector2(-359, 54)
+
+[node name="PlatformAnimated2" parent="World" instance=ExtResource("1_sy781")]
+position = Vector2(-290, 53)
+
+[node name="PlatformAnimated3" parent="World" instance=ExtResource("1_sy781")]
+position = Vector2(-225, 53)
+
+[node name="PlatformAnimated4" parent="World" instance=ExtResource("1_sy781")]
+position = Vector2(-158, 52)
+
+[node name="PlatformAnimated5" parent="World" instance=ExtResource("1_sy781")]
+position = Vector2(-93, 51)
 
 [node name="WOrldBoundary" type="StaticBody2D" parent="World"]
 position = Vector2(4, 413)
@@ -21,58 +34,14 @@ position = Vector2(4, 413)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="World/WOrldBoundary"]
 shape = SubResource("WorldBoundaryShape2D_uqo3m")
 
-[node name="block" type="StaticBody2D" parent="World" groups=["Rotatable", "Scalable", "Transfortable"]]
-position = Vector2(-5, 216)
-scale = Vector2(27, 1.3)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/block"]
-scale = Vector2(6.3, 6.3)
-shape = SubResource("RectangleShape2D_12xvn")
-
-[node name="Sprite2D" type="Sprite2D" parent="World/block"]
-texture = ExtResource("2_lo83c")
-
-[node name="block4" type="StaticBody2D" parent="World" groups=["Rotatable", "Scalable", "Transfortable"]]
-position = Vector2(-21, -397)
-scale = Vector2(28, 1)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/block4"]
-scale = Vector2(6.3, 6.3)
-shape = SubResource("RectangleShape2D_12xvn")
-
-[node name="Sprite2D" type="Sprite2D" parent="World/block4"]
-texture = ExtResource("2_lo83c")
-
-[node name="block2" type="StaticBody2D" parent="World" groups=["Rotatable", "Scalable", "Transfortable"]]
-position = Vector2(-1600, -96)
-scale = Vector2(1, 5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/block2"]
-scale = Vector2(6.3, 6.3)
-shape = SubResource("RectangleShape2D_12xvn")
-
-[node name="Sprite2D" type="Sprite2D" parent="World/block2"]
-texture = ExtResource("2_lo83c")
-
-[node name="block3" type="StaticBody2D" parent="World" groups=["Rotatable", "Scalable", "Transfortable"]]
-position = Vector2(1600, -60)
-scale = Vector2(1, 5)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="World/block3"]
-scale = Vector2(6.3, 6.3)
-shape = SubResource("RectangleShape2D_12xvn")
-
-[node name="Sprite2D" type="Sprite2D" parent="World/block3"]
-texture = ExtResource("2_lo83c")
-
-[node name="Leg" parent="World" instance=ExtResource("2_p63r4")]
+[node name="Legf" parent="World" instance=ExtResource("2_p63r4")]
 position = Vector2(-1359, 69)
 
 [node name="Leg2" parent="World" instance=ExtResource("2_p63r4")]
 position = Vector2(1338, 64)
 
 [node name="Character" parent="." instance=ExtResource("1_tw80r")]
-position = Vector2(-6, -33)
+position = Vector2(-250, -76)
 collision_layer = 3
 
 [node name="Camera2D" type="Camera2D" parent="Character"]
@@ -80,6 +49,6 @@ collision_layer = 3
 [node name="CardsManager" parent="Character/Camera2D" instance=ExtResource("3_c4g5p")]
 position = Vector2(6, 33)
 
-[node name="Spawner" parent="." instance=ExtResource("4_cf5y8")]
-
 [node name="Hud" parent="." instance=ExtResource("5_btfc3")]
+
+[node name="Spawner" parent="." instance=ExtResource("6_qcl4m")]
