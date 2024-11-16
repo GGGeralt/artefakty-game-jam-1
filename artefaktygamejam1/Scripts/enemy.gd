@@ -15,6 +15,11 @@ func _process(delta: float) -> void:
 	var playerPosition = player.global_position
 	var direction = (player.global_position - self.global_position).normalized()
 	
+	if direction.x < 0:
+		self.scale.x = -abs(self.scale.x)
+	else:
+		self.scale.x = abs(self.scale.x) 
+	
 	var collision = move_and_collide(direction * ENEMY_SPEED * delta, true)
 	if collision:
 		var collider = collision.get_collider()

@@ -713,6 +713,10 @@ position = Vector2(640, 192)
 [node name="Dirt110" parent="World/Ground" instance=ExtResource("3_jnx57")]
 position = Vector2(704, 192)
 
+[node name="Hud" parent="." instance=ExtResource("5_btfc3")]
+
+[node name="Spawner" parent="." instance=ExtResource("6_qcl4m")]
+
 [node name="Character" parent="." instance=ExtResource("1_tw80r")]
 position = Vector2(-250, -76)
 collision_layer = 3
@@ -721,8 +725,5 @@ collision_layer = 3
 zoom = Vector2(2, 2)
 
 [node name="CardsManager" parent="Character/Camera2D" instance=ExtResource("3_c4g5p")]
+z_index = 100
 position = Vector2(6, 33)
-
-[node name="Hud" parent="." instance=ExtResource("5_btfc3")]
-
-[node name="Spawner" parent="." instance=ExtResource("6_qcl4m")]
